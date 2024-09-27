@@ -1,0 +1,377 @@
+@import url("https://fonts.cdnfonts.com/css/devil-breeze");
+@import url("https://fonts.cdnfonts.com/css/bimbo");
+
+.cursor-dot {
+  width: 7px;
+  height: 7px;
+  background-color: white;
+  border: 1px solid;
+}
+
+.cursor-outline {
+  width: 30px;
+  height: 30px;
+  border: 2px solid palegreen;
+}
+
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+#container3D {
+  inset: 0;
+  background-color: transparent;
+  z-index: 10;
+  pointer-events: none;
+}
+
+
+/* Header */
+
+header {
+  height: 100vh;
+  background-color: #fe001a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+header #container3D {
+  width: 150px;
+  height: 200px;
+  padding-right: 10px;
+}
+
+nav {
+  width: 100%;
+  padding: 5px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  font-family: cursive;
+}
+
+nav span,
+footer > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: clamp(12px, 1vw, 14px);
+}
+
+nav h2,
+footer > span h2 {
+  margin:  10px 0;
+  font-size: clamp(22px, 2vw, 25px);
+  letter-spacing: 1.2px;
+  font-weight: normal;
+}
+
+nav div {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-size: clamp(17px, 2vw, 20px);
+  letter-spacing: 1.2px;
+}
+
+header > div {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: clamp(70px, 7vw, 90px);
+  font-family: "devil breeze";
+  letter-spacing: 2px;
+}
+
+.container_mouse {
+  position: absolute;
+  bottom: 10px;
+}
+
+.mouse-btn {
+  margin: 10px auto;
+  width: 25px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 20px;
+  display: flex;
+}
+
+.mouse-scroll {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  margin: auto;
+  animation: scrolling 2s ease-in-out infinite;
+}
+
+@keyframes scrolling {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+}
+
+
+/* Footer */
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  font-family: cursive;
+}
+
+footer > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  border-top: 2px solid white;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.footer-grid {
+  width: clamp(270px, 65vw, 1100px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 100px));
+  gap: 20px;
+  align-items: center;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.footer a {
+  color: white;
+  padding: 0 30px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: clamp(10px, 2vw, 15px);
+  letter-spacing: 1.2px;
+}
+
+.footer a:hover,nav a:hover {
+  text-decoration: underline;
+}
+
+footer #container3D {
+  width: 200px;
+  height: 270px;
+}
+
+footer .contact {
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 40px;
+}
+
+footer .contact img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+
+/* Main  */
+
+main {
+  position: relative;
+}
+
+main #intro,
+main div:has(.brands) {
+  background-image: url("./doodle image.webp");
+  background-repeat: repeat;
+  background-size: 350px;
+}
+
+main #intro {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main #intro .detail h2 {
+  font-family: "devil breeze";
+  margin: 0;
+  margin-right: 20px;
+  font-size: clamp(15px, 3vw, 20px);
+}
+
+main #intro .detail p{
+  width: 270px;
+}
+
+main #intro .detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: clamp(12px, 2vw, 15px);
+  padding: 0 40px 0 25px;
+  font-family: cursive;
+  line-height: 2;
+  justify-content: center;
+  width: clamp(350px, 30vw, 400px);
+  height: clamp(350px, 30vw, 400px);
+  background-color: #fe001a;
+  transform: translateX(-70px);
+  color: white;
+  border-radius: 20px;
+  position: relative;
+}
+
+main #intro .detail::before {
+  width: 50%;
+  height: 50%;
+  content: "";
+  border-radius: 20px;
+  background: url("./download (1).webp") no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 5%;
+  left: 90%;
+  z-index: 1;
+}
+
+main div:has(.brands) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 0;
+}
+
+main .brands {
+  width: clamp(700px, 80vw, 1600px);
+  background-color: white;
+  border-radius: 20px;
+  border: 2px solid;
+}
+
+main .brands h2 {
+  font-size: clamp(20px, 3vw, 30px);
+  font-family: "devil breeze";
+  color: black;
+  text-align: center;
+  padding-top: 30px;
+  margin: 0;
+}
+
+main .brands > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+main .brands > div span {
+  width: 200px;
+  height: 180px;
+  border-radius: 20px;
+  display: grid;
+  place-content: center;
+}
+
+main .brands > div span img {
+  width: 160px;
+  transition: all 0.3s ease-in-out;
+}
+
+main .brands > div span img:hover {
+  transform: scale(1.1);
+}
+
+main .sticky_parent {
+  height: 500vh;
+}
+
+main .sticky {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+
+main .products {
+  width: 500vw;
+  height: 100%;
+  top: 0;
+  will-change: transform;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .product {
+  width: 20%;
+  height: 100vh;
+  background-color: #fe001a;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+main .product #container3D {
+  width: 200px;
+  height: 270px;
+}
+
+main .product .detail {
+  display: grid;
+  place-content: center;
+  width: 1540px;
+  padding: 20px;
+  color: white;
+}
+
+main .product .detail h2 {
+  font-size: clamp(20px 3vw, 30px);
+  font-family: "devil breeze";
+  text-align: center;
+  letter-spacing: 1.3px;
+  margin: 10px 0;
+}
+
+main .product .detail p {
+  width: clamp(300px, 70vw, 800px);
+  font-size: clamp(15px, 2vw, 20px);
+  font-family: cursive;
+  line-height: 2;
+}
+
