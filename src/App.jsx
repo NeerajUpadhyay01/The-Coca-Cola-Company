@@ -1,4 +1,4 @@
-import "./app.css";
+import "./App.css";
 import Cursor from "./Cursor";
 import FooterContent from "./FooterContent";
 import HeaderContent from "./HeaderContent";
